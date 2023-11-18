@@ -1,38 +1,57 @@
+/* eslint-disable no-negated-condition */
 import { Request, Response } from 'express';
+import fs from 'fs';
+import { Thing } from '../model/thing';
 
-const data = [
-  { id: 1, title: 'Prueba 1', author: 'Pepe' },
-  { id: 2, title: 'Prueba 2', author: 'Raul' },
-];
+const dataFilePath = './api/db.json';
+export let dataArray: Thing[] = [];
+
+try {
+  const rawData = fs.readFileSync(dataFilePath, 'utf-8');
+  dataArray = JSON.parse(rawData).things || [];
+} catch (error) {
+  console.error('Error al leer el archivo db.json:', error);
+}
 
 export const getAll = (_req: Request, res: Response) => {
-  res.json(data);
+  res.json(dataArray);
 };
 
 export const getById = (req: Request, res: Response) => {
-  const result = data.find((item) => item.id === Number(req.params.id));
+  const result = dataArray.find((item) => item.id === Number(req.params.id));
   res.json(result);
 };
 
-export const search = (_req: Request, _res: Response) => {};
-
 export const create = (req: Request, res: Response) => {
-  const result = { ...req.body, id: data.length + 1 };
-  data.push(result);
+  const result: Thing = { ...req.body, id: dataArray.length + 1 };
+  dataArray.push(result);
   res.json(result);
 };
 
 export const update = (req: Request, res: Response) => {
-  let result = data.find((item) => Number(item.id) === Number(req.params.id));
-  result = { ...result, ...req.body };
-  data[data.findIndex((item) => item.id === Number(req.params.id))] = result!;
-  res.json(result);
+  const idToUpdate: number = Number(req.params.id);
+  let result = dataArray.find((item: Thing) => item.id === idToUpdate) as Thing;
+
+  if (result) {
+    result = { ...result, ...req.body };
+    dataArray[dataArray.findIndex((item: Thing) => item.id === idToUpdate)] =
+      result;
+    res.json(result);
+  } else {
+    res.status(404).json({ error: 'Elemento no encontrado' });
+  }
 };
 
 export const remove = (req: Request, res: Response) => {
-  data.splice(
-    data.findIndex((item) => item.id === Number(req.params.id)),
-    1
+  const idToRemove: number = Number(req.params.id);
+  const indexToRemove = dataArray.findIndex(
+    (item: Thing) => item.id === idToRemove
   );
-  res.json({});
+
+  if (indexToRemove !== -1) {
+    dataArray.splice(indexToRemove, 1);
+    res.json({});
+  } else {
+    res.status(404).json({ error: 'Elemento no encontrado' });
+  }
 };

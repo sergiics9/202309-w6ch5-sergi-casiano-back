@@ -1,0 +1,34 @@
+{
+  "things": [
+    {
+      "id": 1,
+      "title": "React",
+      "author": "Pepe"
+    },
+    {
+      "id": 2,
+      "title": "HTML & CSS",
+      "author": "Jesús"
+    },
+    {
+      "id": 3,
+      "title": "Express",
+      "author": "Alejandro"
+    },
+    {
+      "id": 4,
+      "title": "Jest",
+      "author": "Sergi"
+    },
+    {
+      "id": 5,
+      "title": "test2",
+      "author": "test2"
+    },
+    {
+      "id": 6,
+      "title": "test4",
+      "author": "test4"
+    }
+  ]
+}
