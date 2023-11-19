@@ -40,7 +40,9 @@ export const getById = async (req: Request, res: Response) => {
 
 export const create = async (req: Request, res: Response) => {
   const jsonData = await readDataFromFile();
-  const result: Skin = { ...req.body, id: jsonData.length + 1 };
+  const newId =
+    jsonData.length > 0 ? Math.max(...jsonData.map((item) => item.id)) + 1 : 1;
+  const result: Skin = { ...req.body, id: newId };
   jsonData.push(result);
   await writeDataToFile(jsonData);
   res.json(result);
