@@ -1,34 +1,85 @@
 {
-  "things": [
+  "skins": [
     {
       "id": 1,
-      "title": "React",
-      "author": "Pepe"
+      "name": "Desert Eagle | Blaze",
+      "rarity": "Restricted",
+      "description": "As expensive as it is powerful, the Desert Eagle is an iconic pistol that is difficult to master but surprisingly accurate at long range.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_deagle_aa_flames_light.png",
+      "collections_name": "The Dust Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_dust.png"
     },
     {
       "id": 2,
-      "title": "HTML & CSS",
-      "author": "Jesús"
+      "name": "AK-47 | Vulcan",
+      "rarity": "Covert",
+      "description": "Powerful and reliable, the AK-47 is one of the most popular assault rifles in the world. It is most deadly in short, controlled bursts of fire.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_ak47_cu_ak47_rubber_light.png",
+      "collections_name": "The Huntsman Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_3.png"
     },
     {
       "id": 3,
-      "title": "Express",
-      "author": "Alejandro"
+      "name": "AWP | Dragon Lore",
+      "rarity": "Covert",
+      "description": "High risk and high reward, the infamous AWP is recognizable by its signature report and one-shot, one-kill policy.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_awp_cu_medieval_dragon_awp_light.png",
+      "collections_name": "The Cobblestone Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_cobblestone.png"
     },
     {
       "id": 4,
-      "title": "Jest",
-      "author": "Sergi"
+      "name": "M4A4 | Desolate Space",
+      "rarity": "Classified",
+      "description": "More accurate but less damaging than its AK-47 counterpart, the M4A4 is the full-auto assault rifle of choice for CTs.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_awp_cu_medieval_dragon_awp_light.png",
+      "collections_name": "The Gamma Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_13.png"
     },
     {
       "id": 5,
-      "title": "test2",
-      "author": "test2"
+      "name": "★ Karambit | Tiger Tooth",
+      "rarity": "Covert",
+      "description": "With its curved blade mimicking a tiger's claw, the karambit was developed as part of the southeast Asian martial discipline of silat. The knife is typically used with a reverse grip, with the finger ring on the index finger.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_knife_karambit_an_tiger_orange_light.png",
+      "collections_name": "The Arms Deal Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_weapons_i.png"
     },
     {
       "id": 6,
-      "title": "test4",
-      "author": "test4"
+      "name": "★ M9 Bayonet | Doppler",
+      "rarity": "Covert",
+      "description": "This is the M-9 bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_knife_m9_bayonet_am_doppler_phase4_light.png",
+      "collections_name": "The Train Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_train.png"
+    },
+    {
+      "id": 7,
+      "name": "★ Sport Gloves | Pandora's Box",
+      "rarity": "Extraordinary",
+      "description": "Synthetic fabrics make these athletic gloves durable and eye-catching.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/sporty_gloves_sporty_purple_light.png",
+      "collections_name": "The Mirage Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_mirage.png"
+    },
+    {
+      "id": 8,
+      "name": "★ Butterfly Knife | Lore",
+      "rarity": "Covert",
+      "description": "This is a custom-designed balisong, commonly known as a butterfly knife. The defining characteristic of this weapon is the fan-like opening of a freely pivoting blade, allowing rapid deployment or concealment. As a result, butterfly knives are outlawed in many countries.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_knife_butterfly_cu_butterfly_lore_light.png",
+      "collections_name": "The Havoc Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_op10_t.png"
+    },
+    {
+      "id": 9,
+      "name": "M4A1-S | Hot Rod",
+      "rarity": "Classified",
+      "description": "With a smaller magazine than its unmuffled counterpart, the silenced M4A1 provides quieter shots with less recoil and better accuracy.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_m4a1_silencer_an_red_m4a1s_light.png",
+      "collections_name": "The Chop Shop Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_chopshop.png"
     }
   ]
 }

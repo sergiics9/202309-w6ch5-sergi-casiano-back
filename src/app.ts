@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { thingsRouter } from './router/notes.router.js';
+import { thingsRouter } from './router/skins.router.js';
 
 export const app = express();
 
@@ -11,4 +11,4 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static('public'));
 
-app.use('/things', thingsRouter);
+app.use('/skins', thingsRouter);
