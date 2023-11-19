@@ -18,9 +18,8 @@ const readDataFromFile = async (): Promise<Skin[]> => {
 const writeDataToFile = async (data: Skin[]): Promise<void> => {
   try {
     await fs.writeFile(dataFilePath, JSON.stringify({ skins: data }), 'utf8');
-    console.log('Data successfully written to file.');
   } catch (error) {
-    console.error('Error writing data to file:', error);
+    console.error('Error escribiendo los datos en el archivo:', error);
     throw error;
   }
 };
