@@ -15,9 +15,9 @@ const readDataFromFile = async (): Promise<Skin[]> => {
   }
 };
 
-const writeDataToFile = async (data: Skin): Promise<void> => {
+const writeDataToFile = async (data: Skin[]): Promise<void> => {
   try {
-    await fs.writeFile(dataFilePath, JSON.stringify(data), 'utf8');
+    await fs.writeFile(dataFilePath, JSON.stringify({ skins: data }), 'utf8');
     console.log('Data successfully written to file.');
   } catch (error) {
     console.error('Error writing data to file:', error);
@@ -38,34 +38,40 @@ export const getById = async (req: Request, res: Response) => {
   res.json(result);
 };
 
-export const create = (req: Request, res: Response) => {
-  const result: Skin = { ...req.body, id: dataArray.length + 1 };
-  dataArray.push(result);
+export const create = async (req: Request, res: Response) => {
+  const jsonData = await readDataFromFile();
+  const result: Skin = { ...req.body, id: jsonData.length + 1 };
+  jsonData.push(result);
+  await writeDataToFile(jsonData);
   res.json(result);
 };
 
-export const update = (req: Request, res: Response) => {
+export const update = async (req: Request, res: Response) => {
   const idToUpdate: number = Number(req.params.id);
-  let result = dataArray.find((item: Skin) => item.id === idToUpdate) as Skin;
+  const jsonData = await readDataFromFile();
+  let result = jsonData.find((item: Skin) => item.id === idToUpdate) as Skin;
 
   if (result) {
     result = { ...result, ...req.body };
-    dataArray[dataArray.findIndex((item: Skin) => item.id === idToUpdate)] =
+    jsonData[jsonData.findIndex((item: Skin) => item.id === idToUpdate)] =
       result;
+    await writeDataToFile(jsonData);
     res.json(result);
   } else {
     res.status(404).json({ error: 'Elemento no encontrado' });
   }
 };
 
-export const remove = (req: Request, res: Response) => {
+export const remove = async (req: Request, res: Response) => {
   const idToRemove: number = Number(req.params.id);
-  const indexToRemove = dataArray.findIndex(
+  const jsonData = await readDataFromFile();
+  const indexToRemove = jsonData.findIndex(
     (item: Skin) => item.id === idToRemove
   );
 
   if (indexToRemove !== -1) {
-    dataArray.splice(indexToRemove, 1);
+    jsonData.splice(indexToRemove, 1);
+    await writeDataToFile(jsonData);
     res.json({});
   } else {
     res.status(404).json({ error: 'Elemento no encontrado' });

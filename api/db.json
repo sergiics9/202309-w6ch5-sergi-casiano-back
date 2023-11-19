@@ -19,15 +19,6 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_3.png"
     },
     {
-      "id": 3,
-      "name": "AWP | Dragon Lore",
-      "rarity": "Covert",
-      "description": "High risk and high reward, the infamous AWP is recognizable by its signature report and one-shot, one-kill policy.",
-      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_awp_cu_medieval_dragon_awp_light.png",
-      "collections_name": "The Cobblestone Collection",
-      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_cobblestone.png"
-    },
-    {
       "id": 4,
       "name": "M4A4 | Desolate Space",
       "rarity": "Classified",
@@ -80,6 +71,15 @@
       "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_m4a1_silencer_an_red_m4a1s_light.png",
       "collections_name": "The Chop Shop Collection",
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_chopshop.png"
+    },
+    {
+      "id": 10,
+      "title": "P90 | Grim",
+      "rarity": "Mil-Spec Grade",
+      "description": "Easily recognizable for its unique bullpup design, the P90 is a great weapon to shoot on the move due to its high-capacity magazine and low recoil.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_p90_cu_p90_grimm_light.png",
+      "collections_name": "The Gamma 2 Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_gamma_2.png"
     }
   ]
 }
