@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import { thingsRouter } from './router/skins.router.js';
@@ -10,5 +10,9 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.static('public'));
+
+app.get('/', (_req: Request, res: Response) => {
+  res.json('Respuesta al Get');
+});
 
 app.use('/skins', thingsRouter);

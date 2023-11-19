@@ -19,18 +19,27 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_3.png"
     },
     {
+      "id": 3,
+      "name": "AWP | Dragon Lore",
+      "rarity": "Covert",
+      "description": "High risk and high reward, the infamous AWP is recognizable by its signature report and one-shot, one-kill policy.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_awp_cu_medieval_dragon_awp_light.png",
+      "collections_name": "The Cobblestone Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_cobblestone.png"
+    },
+    {
       "id": 4,
       "name": "M4A4 | Desolate Space",
       "rarity": "Classified",
       "description": "More accurate but less damaging than its AK-47 counterpart, the M4A4 is the full-auto assault rifle of choice for CTs.",
-      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_awp_cu_medieval_dragon_awp_light.png",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_m4a1_cu_m4a4_desolate_space_light.png",
       "collections_name": "The Gamma Collection",
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_13.png"
     },
     {
       "id": 5,
       "name": "★ Karambit | Tiger Tooth",
-      "rarity": "Covert",
+      "rarity": "Extraordinary",
       "description": "With its curved blade mimicking a tiger's claw, the karambit was developed as part of the southeast Asian martial discipline of silat. The knife is typically used with a reverse grip, with the finger ring on the index finger.",
       "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_knife_karambit_an_tiger_orange_light.png",
       "collections_name": "The Arms Deal Collection",
@@ -39,7 +48,7 @@
     {
       "id": 6,
       "name": "★ M9 Bayonet | Doppler",
-      "rarity": "Covert",
+      "rarity": "Extraordinary",
       "description": "This is the M-9 bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat.",
       "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_knife_m9_bayonet_am_doppler_phase4_light.png",
       "collections_name": "The Train Collection",
@@ -57,7 +66,7 @@
     {
       "id": 8,
       "name": "★ Butterfly Knife | Lore",
-      "rarity": "Covert",
+      "rarity": "Extraordinary",
       "description": "This is a custom-designed balisong, commonly known as a butterfly knife. The defining characteristic of this weapon is the fan-like opening of a freely pivoting blade, allowing rapid deployment or concealment. As a result, butterfly knives are outlawed in many countries.",
       "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_knife_butterfly_cu_butterfly_lore_light.png",
       "collections_name": "The Havoc Collection",
@@ -74,21 +83,12 @@
     },
     {
       "id": 10,
-      "title": "P90 | Grim",
+      "name": "P90 | Grim",
       "rarity": "Mil-Spec Grade",
       "description": "Easily recognizable for its unique bullpup design, the P90 is a great weapon to shoot on the move due to its high-capacity magazine and low recoil.",
       "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_p90_cu_p90_grimm_light.png",
       "collections_name": "The Gamma 2 Collection",
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_gamma_2.png"
-    },
-    {
-      "title": "P90 | Grim2",
-      "rarity": "Mil-Spec Grade",
-      "description": "Easily recognizable for its unique bullpup design, the P90 is a great weapon to shoot on the move due to its high-capacity magazine and low recoil.",
-      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_p90_cu_p90_grimm_light.png",
-      "collections_name": "The Gamma 2 Collection",
-      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_gamma_2.png",
-      "id": 11
     }
   ]
 }
