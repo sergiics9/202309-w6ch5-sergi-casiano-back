@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { thingsRouter } from './router/skins.router.js';
+import { thingsRouter } from './routers/skins.router.js';
 
 export const app = express();
 

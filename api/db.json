@@ -1,7 +1,7 @@
 {
   "skins": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Desert Eagle | Blaze",
       "rarity": "Restricted",
       "description": "As expensive as it is powerful, the Desert Eagle is an iconic pistol that is difficult to master but surprisingly accurate at long range.",
@@ -10,7 +10,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_dust.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "AK-47 | Vulcan",
       "rarity": "Covert",
       "description": "Powerful and reliable, the AK-47 is one of the most popular assault rifles in the world. It is most deadly in short, controlled bursts of fire.",
@@ -19,7 +19,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_3.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "AWP | Dragon Lore",
       "rarity": "Covert",
       "description": "High risk and high reward, the infamous AWP is recognizable by its signature report and one-shot, one-kill policy.",
@@ -28,7 +28,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_cobblestone.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "M4A4 | Desolate Space",
       "rarity": "Classified",
       "description": "More accurate but less damaging than its AK-47 counterpart, the M4A4 is the full-auto assault rifle of choice for CTs.",
@@ -37,7 +37,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_13.png"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "★ Karambit | Tiger Tooth",
       "rarity": "Extraordinary",
       "description": "With its curved blade mimicking a tiger's claw, the karambit was developed as part of the southeast Asian martial discipline of silat. The knife is typically used with a reverse grip, with the finger ring on the index finger.",
@@ -46,7 +46,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_weapons_i.png"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "★ M9 Bayonet | Doppler",
       "rarity": "Extraordinary",
       "description": "This is the M-9 bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat.",
@@ -55,7 +55,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_train.png"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "★ Sport Gloves | Pandora's Box",
       "rarity": "Extraordinary",
       "description": "Synthetic fabrics make these athletic gloves durable and eye-catching.",
@@ -64,7 +64,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_mirage.png"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "★ Butterfly Knife | Lore",
       "rarity": "Extraordinary",
       "description": "This is a custom-designed balisong, commonly known as a butterfly knife. The defining characteristic of this weapon is the fan-like opening of a freely pivoting blade, allowing rapid deployment or concealment. As a result, butterfly knives are outlawed in many countries.",
@@ -73,7 +73,7 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_op10_t.png"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "M4A1-S | Hot Rod",
       "rarity": "Classified",
       "description": "With a smaller magazine than its unmuffled counterpart, the silenced M4A1 provides quieter shots with less recoil and better accuracy.",
@@ -82,13 +82,31 @@
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_chopshop.png"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "P90 | Grim",
       "rarity": "Mil-Spec Grade",
       "description": "Easily recognizable for its unique bullpup design, the P90 is a great weapon to shoot on the move due to its high-capacity magazine and low recoil.",
       "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_p90_cu_p90_grimm_light.png",
       "collections_name": "The Gamma 2 Collection",
       "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_gamma_2.png"
+    },
+    {
+      "id": "11",
+      "name": "USP-S | Kill Confirmed",
+      "rarity": "Covert",
+      "description": "A fan favorite from Counter-Strike Source, the Silenced USP Pistol has a detachable silencer that gives shots less recoil while suppressing attention-getting noise.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_usp_silencer_cu_usp_kill_confirmed_light.png",
+      "collections_name": "The Shadow Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_9.png"
+    },
+    {
+      "id": "12",
+      "name": "MAC-10 | Disco Tech",
+      "rarity": "Classified",
+      "description": "Essentially a box that bullets come out of, the MAC-10 SMG boasts a high rate of fire, with poor spread accuracy and high recoil as trade-offs.",
+      "image": "https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_mac10_cu_mac10_nacre_light.png",
+      "collections_name": "The Prisma 2 Collection",
+      "collections_image": "https://raw.githubusercontent.com/steamdatabase/gametracking-csgo/108f1682bf7eeb1420caaf2357da88b614a7e1b0/csgo/pak01_dir/resource/flash/econ/set_icons/set_community_25.png"
     }
   ]
 }

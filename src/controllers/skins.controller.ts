@@ -1,7 +1,7 @@
 /* eslint-disable no-negated-condition */
 import { Request, Response } from 'express';
 import fs from 'fs/promises';
-import { Skin } from '../model/skin';
+import { Skin } from '../entities/skin';
 
 const dataFilePath = './api/db.json';
 

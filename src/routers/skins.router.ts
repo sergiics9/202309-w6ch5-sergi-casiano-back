@@ -5,7 +5,7 @@ import {
   getById,
   remove,
   update,
-} from '../controller/skins.controller.js';
+} from '../controllers/skins.controller.js';
 
 export const thingsRouter = createRouter();
 
