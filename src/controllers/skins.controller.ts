@@ -1,80 +1,52 @@
-/* eslint-disable no-negated-condition */
-import { Request, Response } from 'express';
-import fs from 'fs/promises';
-import { Skin } from '../entities/skin';
+import { NextFunction, Request, Response } from 'express';
+import createDebug from 'debug';
+import { SkinsFileRepo } from '../repos/skins.file.repo.js';
 
-const dataFilePath = './api/db.json';
+const debug = createDebug('SKINS:skins:controller');
 
-const readDataFromFile = async (): Promise<Skin[]> => {
-  try {
-    const data = await fs.readFile(dataFilePath, 'utf8');
-    return JSON.parse(data).skins as Skin[];
-  } catch (error) {
-    console.error('Error reading data file:', error);
-    throw error;
+export class SkinsController {
+  repo: SkinsFileRepo;
+  constructor() {
+    debug('Instantiated');
+    this.repo = new SkinsFileRepo();
   }
-};
 
-const writeDataToFile = async (data: Skin[]): Promise<void> => {
-  try {
-    await fs.writeFile(dataFilePath, JSON.stringify({ skins: data }), 'utf8');
-  } catch (error) {
-    console.error('Error escribiendo los datos en el archivo:', error);
-    throw error;
-  }
-};
-
-export const getAll = async (_req: Request, res: Response) => {
-  const jsonData = await readDataFromFile();
-  res.json(jsonData);
-};
-
-export const getById = async (req: Request, res: Response) => {
-  const jsonData = await readDataFromFile();
-  const result = jsonData.find(
-    (item: { id: number }) => item.id === Number(req.params.id)
-  );
-  res.json(result);
-};
-
-export const create = async (req: Request, res: Response) => {
-  const jsonData = await readDataFromFile();
-  const newId =
-    jsonData.length > 0 ? Math.max(...jsonData.map((item) => item.id)) + 1 : 1;
-  const result: Skin = { ...req.body, id: newId };
-  jsonData.push(result);
-  await writeDataToFile(jsonData);
-  res.json(result);
-};
-
-export const update = async (req: Request, res: Response) => {
-  const idToUpdate: number = Number(req.params.id);
-  const jsonData = await readDataFromFile();
-  let result = jsonData.find((item: Skin) => item.id === idToUpdate) as Skin;
-
-  if (result) {
-    result = { ...result, ...req.body };
-    jsonData[jsonData.findIndex((item: Skin) => item.id === idToUpdate)] =
-      result;
-    await writeDataToFile(jsonData);
+  async getAll(_req: Request, res: Response) {
+    const result = await this.repo.getAll();
     res.json(result);
-  } else {
-    res.status(404).json({ error: 'Elemento no encontrado' });
   }
-};
 
-export const remove = async (req: Request, res: Response) => {
-  const idToRemove: number = Number(req.params.id);
-  const jsonData = await readDataFromFile();
-  const indexToRemove = jsonData.findIndex(
-    (item: Skin) => item.id === idToRemove
-  );
-
-  if (indexToRemove !== -1) {
-    jsonData.splice(indexToRemove, 1);
-    await writeDataToFile(jsonData);
-    res.json({});
-  } else {
-    res.status(404).json({ error: 'Elemento no encontrado' });
+  async getById(req: Request, res: Response, next: NextFunction) {
+    try {
+      const result = await this.repo.getById(req.params.id);
+      res.json(result);
+    } catch (error) {
+      next(error);
+    }
   }
-};
+
+  search = (_req: Request, _res: Response) => {};
+
+  async create(req: Request, res: Response) {
+    const result = await this.repo.create(req.body);
+    res.status(201);
+    res.statusMessage = 'Created';
+    res.json(result);
+  }
+
+  async update(req: Request, res: Response) {
+    const result = await this.repo.update(req.params.id, req.body);
+    res.json(result);
+  }
+
+  async delete(req: Request, res: Response, next: NextFunction) {
+    try {
+      await this.repo.delete(req.params.id);
+      res.status(204);
+      res.statusMessage = 'No Content';
+      res.json({});
+    } catch (error) {
+      next(error);
+    }
+  }
+}

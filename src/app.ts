@@ -1,9 +1,15 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { thingsRouter } from './routers/skins.router.js';
+import { filmsRouter } from './routers/skins.router.js';
+import createDebug from 'debug';
+
+import { errorMiddleware } from './middleware/error.middleware.js';
+
+const debug = createDebug('SKINS:app');
 
 export const app = express();
+debug('Starting');
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -11,8 +17,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static('public'));
 
-app.get('/', (_req: Request, res: Response) => {
-  res.json('Respuesta al Get');
-});
+app.use('/skins', filmsRouter);
 
-app.use('/skins', thingsRouter);
+app.use(errorMiddleware);
