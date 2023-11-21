@@ -31,10 +31,10 @@ export class SkinsFileRepo implements Repository<Skin> {
     return result;
   }
 
-  search({ _key, _value }: { _key: string; _value: unknown }): Promise<Skin[]> {
-    // Temp this.skins.find((item) => item[_key] === _value)
-    throw new Error('Method not implemented.');
-  }
+  // Search({ _key, _value }: { _key: string; _value: unknown }): Promise<Skin[]> {
+  //   // Temp this.skins.find((item) => item[_key] === _value)
+  //   // throw new Error('Method not implemented.');
+  // }
 
   async create(newItem: Omit<Skin, 'id'>): Promise<Skin> {
     const result: Skin = { ...newItem, id: crypto.randomUUID() };
