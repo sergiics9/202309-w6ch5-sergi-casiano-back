@@ -9,7 +9,8 @@
     "start:dev": "cross-env PORT=2700 DEBUG=SKINS* nodemon dist/index.js",
     "build": "tsc -w",
     "build:render": "tsc",
-    "test": "jest --watchAll --coverage"
+    "test": "jest --watchAll --coverage",
+    "test:prod": "jest --watchAll --watchAll=false --coverage --passWithNoTests"
   },
   "keywords": [],
   "author": "Sergi Casiano",
