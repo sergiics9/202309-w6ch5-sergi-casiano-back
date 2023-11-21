@@ -22,11 +22,6 @@ export class SkinsMongoRepo implements Repository<Skin> {
     return result;
   }
 
-  search({ _key, _value }: { _key: string; _value: unknown }): Promise<Skin[]> {
-    // Temp this.Skins.find((item) => item[_key] === _value)
-    throw new Error('Method not implemented.');
-  }
-
   async create(newItem: Omit<Skin, 'id'>): Promise<Skin> {
     const result: Skin = await SkinModel.create(newItem);
     return result;
