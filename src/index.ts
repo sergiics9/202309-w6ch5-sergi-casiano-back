@@ -4,7 +4,7 @@ import createDebug from 'debug';
 import { dbConnect } from './services/db.connect.js';
 
 const debug = createDebug('SKINS:index');
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 2700;
 const server = createServer(app);
 debug('Starting server');
 
