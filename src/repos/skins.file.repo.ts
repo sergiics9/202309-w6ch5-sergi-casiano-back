@@ -35,9 +35,8 @@ export class SkinsFileRepo implements Repository<Skin> {
   //   // Temp this.skins.find((item) => item[_key] === _value)
   //   // throw new Error('Method not implemented.');
   // }
-
   async create(newItem: Omit<Skin, 'id'>): Promise<Skin> {
-    const result: Skin = { ...newItem, id: crypto.randomUUID() };
+    const result: Skin = { ...newItem, id: (this.skins.length + 1).toString() };
     const newTasks = [...this.skins, result];
     await this.save(newTasks as Skin[]);
     return result;

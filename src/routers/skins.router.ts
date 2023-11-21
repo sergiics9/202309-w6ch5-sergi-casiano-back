@@ -10,7 +10,6 @@ debug('Starting');
 const controller = new SkinsController();
 
 filmsRouter.get('/', controller.getAll.bind(controller));
-filmsRouter.get('/search', controller.search.bind(controller));
 filmsRouter.get('/:id', controller.getById.bind(controller));
 filmsRouter.post('/', controller.create.bind(controller));
 filmsRouter.patch('/:id', controller.update.bind(controller));
