@@ -1,5 +1,5 @@
 export interface Skin {
-  id: number;
+  id: string;
   name: string;
   rarity: string;
   description: string;
