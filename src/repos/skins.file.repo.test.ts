@@ -1,6 +1,6 @@
 import { Skin } from '../entities/skin';
 import { HttpError } from '../types/http.error';
-import { SkinsFileRepo } from './skins.file.repo';
+import { SkinsMongoRepo } from './skins.mongo.repo';
 import fs from 'fs/promises';
 
 jest.mock('fs/promises');
@@ -11,7 +11,7 @@ describe('Given SkinsFileRepo class', () => {
     fs.readFile = jest.fn().mockResolvedValue(mockData);
     fs.writeFile = jest.fn();
 
-    const repo = new SkinsFileRepo();
+    const repo = new SkinsMongoRepo();
     const mockId = '1';
     test('Then getAll should return the list of skins', async () => {
       const result = await repo.getAll();
@@ -28,7 +28,7 @@ describe('Given SkinsFileRepo class', () => {
       const mockData = '[]';
       const mockName = 'AWP | Dragon Lore';
       fs.readFile = jest.fn().mockResolvedValue(mockData);
-      const repo = new SkinsFileRepo();
+      const repo = new SkinsMongoRepo();
 
       const newSkin = { name: mockName } as Omit<Skin, 'id'>;
       const result = await repo.create(newSkin);
