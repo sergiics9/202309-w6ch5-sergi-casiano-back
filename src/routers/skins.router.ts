@@ -1,18 +1,18 @@
 import { Router as createRouter } from 'express';
 import { SkinsController } from '../controllers/skins.controller.js';
 import createDebug from 'debug';
+import { SkinsMongoRepo } from '../repos/skins.mongo.repo.js';
 
-const debug = createDebug('SKINS:films:router');
+const debug = createDebug('SKINS:skins:router');
 
-export const filmsRouter = createRouter();
+export const skinsRouter = createRouter();
 debug('Starting');
 
-const controller = new SkinsController();
+const repo = new SkinsMongoRepo();
+const controller = new SkinsController(repo);
 
-filmsRouter.get('/', controller.getAll.bind(controller));
-filmsRouter.get('/:id', controller.getById.bind(controller));
-filmsRouter.post('/', controller.create.bind(controller));
-filmsRouter.patch('/:id', controller.update.bind(controller));
-filmsRouter.patch('addUser/:id', controller.update.bind(controller));
-filmsRouter.patch('removeUser/:id', controller.update.bind(controller));
-filmsRouter.delete('/:id', controller.delete.bind(controller));
+skinsRouter.get('/', controller.getAll.bind(controller));
+skinsRouter.get('/:id', controller.getById.bind(controller));
+skinsRouter.post('/', controller.create.bind(controller));
+skinsRouter.patch('/:id', controller.update.bind(controller));
+skinsRouter.delete('/:id', controller.delete.bind(controller));

@@ -1,19 +1,24 @@
 import { createServer } from 'http';
 import { app } from './app.js';
 import createDebug from 'debug';
+import { dbConnect } from './services/db.connect.js';
 
 const debug = createDebug('SKINS:index');
-const PORT = process.env.PORT ?? 2700;
+const PORT = process.env.PORT || 3030;
 const server = createServer(app);
-
 debug('Starting server');
 
-server.listen(PORT);
+dbConnect()
+  .then((mongoose) => {
+    server.listen(PORT);
+    debug('Connected to DB:', mongoose.connection.db.databaseName);
+  })
+  .catch((error) => server.emit('error', error));
 
 server.on('listening', () => {
   debug('Listening on port', PORT);
 });
 
 server.on('error', (error) => {
-  console.log(error.message);
+  debug(`Error ${error.message}`);
 });

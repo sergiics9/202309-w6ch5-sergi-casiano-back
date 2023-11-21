@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { filmsRouter } from './routers/skins.router.js';
+import { skinsRouter } from './routers/skins.router.js';
 import createDebug from 'debug';
 
 import { errorMiddleware } from './middleware/error.middleware.js';
@@ -17,6 +17,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static('public'));
 
-app.use('/skins', filmsRouter);
+app.use('/skins', skinsRouter);
 
 app.use(errorMiddleware);
