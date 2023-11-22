@@ -12,7 +12,7 @@ describe('Given SkinsMongoRepo class', () => {
 
   beforeEach(() => {
     mockId = '1';
-    mockName = 'Godzilla VS Goku';
+    mockName = 'AWP | Dragon Lore';
     mockData = [{ id: mockId, name: mockName }];
 
     (SkinModel.find as jest.Mock).mockResolvedValue(mockData);
