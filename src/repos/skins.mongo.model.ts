@@ -27,6 +27,18 @@ const skinsSchema = new Schema<Skin>({
     type: String,
     required: true,
   },
+  case_image: {
+    type: String,
+    required: true,
+  },
+  case_name: {
+    type: String,
+    required: true,
+  },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
 });
 
 skinsSchema.set('toJSON', {
