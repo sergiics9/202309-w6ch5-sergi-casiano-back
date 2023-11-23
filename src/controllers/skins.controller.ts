@@ -40,6 +40,18 @@ export class SkinsController {
     }
   }
 
+  async search(req: Request, res: Response, next: NextFunction) {
+    try {
+      const result = await this.repo.search({
+        key: Object.entries(req.query)[0][0] as keyof Skin,
+        value: Object.entries(req.query)[0][1],
+      });
+      res.json(result);
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async update(req: Request, res: Response, next: NextFunction) {
     try {
       const result = await this.repo.update(req.params.id, req.body);

@@ -36,11 +36,10 @@ export class SkinsMongoRepo implements Repository<Skin> {
 
   async create(newItem: Omit<Skin, 'id'>): Promise<Skin> {
     const userID = newItem.author.id;
-    newItem.author = await this.userRepo.getById(userID);
-    const result: Skin = await SkinModel.create(newItem);
-
-    newItem.author.skins.push(result.id as unknown as Skin);
-    await this.userRepo.update(userID, newItem.author);
+    const user = await this.userRepo.getById(userID);
+    const result: Skin = await SkinModel.create({ ...newItem, author: userID });
+    user.skins.push(result);
+    await this.userRepo.update(userID, user);
     return result;
   }
 
@@ -53,6 +52,22 @@ export class SkinsMongoRepo implements Repository<Skin> {
       })
       .exec();
     if (!result) throw new HttpError(404, 'Not Found', 'Update not possible');
+    return result;
+  }
+
+  async search({
+    key,
+    value,
+  }: {
+    key: keyof Skin;
+    value: any;
+  }): Promise<Skin[]> {
+    const result = await SkinModel.find({ [key]: value })
+      .populate('author', {
+        skins: 0,
+      })
+      .exec();
+
     return result;
   }
 
