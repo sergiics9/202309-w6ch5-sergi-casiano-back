@@ -72,9 +72,18 @@ export class SkinsMongoRepo implements Repository<Skin> {
   }
 
   async delete(id: string): Promise<void> {
-    const result = await SkinModel.findByIdAndDelete(id).exec();
+    const result = await SkinModel.findByIdAndDelete(id)
+      .populate('author', {
+        skins: 0,
+      })
+      .exec();
     if (!result) {
       throw new HttpError(404, 'Not Found', 'Delete not possible');
     }
+
+    const userID = result.author.id;
+    const user = await this.userRepo.getById(userID);
+    user.skins = user.skins.filter((item) => item.id !== id);
+    await this.userRepo.update(userID, user);
   }
 }

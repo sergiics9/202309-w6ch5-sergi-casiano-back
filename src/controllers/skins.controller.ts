@@ -31,6 +31,7 @@ export class SkinsController {
 
   async create(req: Request, res: Response, next: NextFunction) {
     try {
+      req.body.author = { id: req.body.userId };
       const result = await this.repo.create(req.body);
       res.status(201);
       res.statusMessage = 'Created';
