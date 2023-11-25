@@ -13,7 +13,11 @@ const repo = new SkinsMongoRepo();
 const controller = new SkinsController(repo);
 const interceptor = new AuthInterceptor();
 
-skinsRouter.get('/', controller.getAll.bind(controller));
+skinsRouter.get(
+  '/',
+  // Interceptor.authorization.bind(interceptor),
+  controller.getAll.bind(controller)
+);
 skinsRouter.get('/search', controller.search.bind(controller));
 skinsRouter.get('/:id', controller.getById.bind(controller));
 skinsRouter.post(

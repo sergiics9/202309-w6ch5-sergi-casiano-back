@@ -1,7 +1,9 @@
 import { SkinsMongoRepo } from './skins.mongo.repo';
-import { SkinModel } from './skins.mongo.model';
+import { SkinModel } from './skins.mongo.model.js';
+import { Skin } from '../entities/skin';
+import { UsersMongoRepo } from './users.mongo.repo';
 
-jest.mock('./skins.mongo.model.js');
+jest.mock('./Skins.mongo.model.js');
 
 describe('Given SkinsMongoRepo', () => {
   let repo: SkinsMongoRepo;
@@ -13,12 +15,14 @@ describe('Given SkinsMongoRepo', () => {
           exec,
         }),
       });
+
       SkinModel.findById = jest.fn().mockReturnValue({
         populate: jest.fn().mockReturnValue({
           exec,
         }),
       });
 
+      SkinModel.create = jest.fn().mockResolvedValue('Test');
       repo = new SkinsMongoRepo();
     });
 
@@ -27,15 +31,31 @@ describe('Given SkinsMongoRepo', () => {
       expect(exec).toHaveBeenCalled();
       expect(result).toBe('Test');
     });
+
     test('Then it should execute getById', async () => {
       const result = await repo.getById('');
       expect(exec).toHaveBeenCalled();
       expect(result).toBe('Test');
     });
+
+    test('Then it should execute search', async () => {
+      const result = await repo.search({ key: 'rarity', value: true });
+      expect(exec).toHaveBeenCalled();
+      expect(result).toBe('Test');
+    });
+
+    test('Then it should execute create', async () => {
+      UsersMongoRepo.prototype.getById = jest.fn().mockResolvedValue({
+        Skins: [],
+      });
+      UsersMongoRepo.prototype.update = jest.fn();
+      const result = await repo.create({ author: {} } as Omit<Skin, 'id'>);
+      expect(result).toBe('Test');
+    });
   });
 
-  describe('When we instantiate it WITH Errors', () => {
-    const exec = jest.fn().mockRejectedValue(new Error('Error'));
+  describe('When we instantiate it WITH errors', () => {
+    const exec = jest.fn().mockRejectedValue(new Error('Test'));
     beforeEach(() => {
       SkinModel.findById = jest.fn().mockReturnValue({
         populate: jest.fn().mockReturnValue({
@@ -45,9 +65,8 @@ describe('Given SkinsMongoRepo', () => {
       repo = new SkinsMongoRepo();
     });
 
-    test('Then it should execute by getById', async () => {
+    test('Then it should execute getById', async () => {
       expect(repo.getById('')).rejects.toThrow();
     });
   });
 });
-
