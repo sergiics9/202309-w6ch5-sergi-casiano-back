@@ -3,7 +3,7 @@ import { SkinModel } from './skins.mongo.model.js';
 import { Skin } from '../entities/skin';
 import { UsersMongoRepo } from './users.mongo.repo';
 
-jest.mock('./Skins.mongo.model.js');
+jest.mock('./skins.mongo.model.js');
 
 describe('Given SkinsMongoRepo', () => {
   let repo: SkinsMongoRepo;
@@ -46,7 +46,7 @@ describe('Given SkinsMongoRepo', () => {
 
     test('Then it should execute create', async () => {
       UsersMongoRepo.prototype.getById = jest.fn().mockResolvedValue({
-        Skins: [],
+        skins: [],
       });
       UsersMongoRepo.prototype.update = jest.fn();
       const result = await repo.create({ author: {} } as Omit<Skin, 'id'>);
