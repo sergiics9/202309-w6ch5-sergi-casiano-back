@@ -54,4 +54,4 @@ skinsSchema.set('toJSON', {
   },
 });
 
-export const SkinModel = model('Skin', skinsSchema, 'skins');
+export const SkinModel = model<Skin>('Skin', skinsSchema, 'skins');

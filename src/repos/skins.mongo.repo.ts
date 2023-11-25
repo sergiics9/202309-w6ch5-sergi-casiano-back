@@ -4,6 +4,7 @@ import { Repository } from './repo.js';
 import { HttpError } from '../types/http.error.js';
 import createDebug from 'debug';
 import { UsersMongoRepo } from './users.mongo.repo.js';
+import mongoose from 'mongoose';
 
 const debug = createDebug('SKINS:skins:mongo:repo');
 
@@ -34,6 +35,22 @@ export class SkinsMongoRepo implements Repository<Skin> {
     return result;
   }
 
+  async search({
+    key,
+    value,
+  }: {
+    key: keyof Skin;
+    value: any;
+  }): Promise<Skin[]> {
+    const result = await SkinModel.find({ [key]: value })
+      .populate('author', {
+        skins: 0,
+      })
+      .exec();
+
+    return result;
+  }
+
   async create(newItem: Omit<Skin, 'id'>): Promise<Skin> {
     const userID = newItem.author.id;
     const user = await this.userRepo.getById(userID);
@@ -55,22 +72,6 @@ export class SkinsMongoRepo implements Repository<Skin> {
     return result;
   }
 
-  async search({
-    key,
-    value,
-  }: {
-    key: keyof Skin;
-    value: any;
-  }): Promise<Skin[]> {
-    const result = await SkinModel.find({ [key]: value })
-      .populate('author', {
-        skins: 0,
-      })
-      .exec();
-
-    return result;
-  }
-
   async delete(id: string): Promise<void> {
     const result = await SkinModel.findByIdAndDelete(id)
       .populate('author', {
@@ -83,7 +84,11 @@ export class SkinsMongoRepo implements Repository<Skin> {
 
     const userID = result.author.id;
     const user = await this.userRepo.getById(userID);
-    user.skins = user.skins.filter((item) => item.id !== id);
+
+    user.skins = user.skins.filter((item) => {
+      const itemID = item as unknown as mongoose.mongo.ObjectId;
+      return itemID.toString() !== id;
+    });
     await this.userRepo.update(userID, user);
   }
 }
