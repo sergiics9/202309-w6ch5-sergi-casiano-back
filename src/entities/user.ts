@@ -10,5 +10,6 @@ export type User = LoginUser & {
   name: string;
   surname: string;
   age: number;
+
   skins: Skin[];
 };
