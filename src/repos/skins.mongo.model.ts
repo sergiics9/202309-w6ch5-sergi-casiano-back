@@ -20,21 +20,33 @@ const skinsSchema = new Schema<Skin>({
     required: true,
   },
   image: {
-    type: String,
-    required: true,
+    publicId: String,
+    size: Number,
+    // Width: number;
+    // height: number;
+    format: String,
+    url: String,
   },
   collections_name: {
     type: String,
     required: true,
   },
-  collections_image: {
-    type: String,
-    required: true,
-  },
-  case_image: {
-    type: String,
-    required: true,
-  },
+  // Collections_image: {
+  //   publicId: String,
+  //   size: Number,
+  //   // Width: number;
+  //   // height: number;
+  //   format: String,
+  //   url: String,
+  // },
+  // case_image: {
+  //   publicId: String,
+  //   size: Number,
+  //   // Width: number;
+  //   // height: number;
+  //   format: String,
+  //   url: String,
+  // },
   case_name: {
     type: String,
     required: true,

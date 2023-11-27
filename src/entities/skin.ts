@@ -1,3 +1,4 @@
+import { ImgData } from '../types/img.data';
 import { User } from './user';
 
 export type Skin = {
@@ -6,10 +7,10 @@ export type Skin = {
   category: 'Rifle' | 'SMG' | 'Pistol' | 'Knife' | 'Glove';
   rarity: string;
   description: string;
-  image: string;
+  image: ImgData;
   collections_name: string;
-  collections_image: string;
-  case_image: string;
+  collections_image: ImgData;
+  case_image: ImgData;
   case_name: string;
   author: User;
 };
