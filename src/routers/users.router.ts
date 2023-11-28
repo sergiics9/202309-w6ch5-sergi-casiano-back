@@ -14,10 +14,19 @@ const controller = new UsersController(repo);
 const interceptor = new AuthInterceptor();
 
 usersRouter.get('/', controller.getAll.bind(controller));
+
 usersRouter.post('/register', controller.create.bind(controller));
+
 usersRouter.post('/login', controller.login.bind(controller));
+
 usersRouter.patch(
   '/login',
   interceptor.authorization.bind(interceptor),
   controller.login.bind(controller)
+);
+
+usersRouter.patch(
+  '/:id',
+  interceptor.authorization.bind(interceptor),
+  controller.update.bind(controller)
 );

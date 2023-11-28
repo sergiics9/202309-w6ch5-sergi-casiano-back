@@ -22,8 +22,8 @@ const skinsSchema = new Schema<Skin>({
   image: {
     publicId: String,
     size: Number,
-    // Width: number;
-    // height: number;
+    width: Number,
+    height: Number,
     format: String,
     url: String,
   },
@@ -31,22 +31,6 @@ const skinsSchema = new Schema<Skin>({
     type: String,
     required: true,
   },
-  // Collections_image: {
-  //   publicId: String,
-  //   size: Number,
-  //   // Width: number;
-  //   // height: number;
-  //   format: String,
-  //   url: String,
-  // },
-  // case_image: {
-  //   publicId: String,
-  //   size: Number,
-  //   // Width: number;
-  //   // height: number;
-  //   format: String,
-  //   url: String,
-  // },
   case_name: {
     type: String,
     required: true,

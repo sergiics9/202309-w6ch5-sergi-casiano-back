@@ -21,22 +21,23 @@ skinsRouter.get(
   controller.getAll.bind(controller)
 );
 skinsRouter.get('/search', controller.search.bind(controller));
+
 skinsRouter.get('/:id', controller.getById.bind(controller));
+
 skinsRouter.post(
   '/',
   interceptor.authorization.bind(interceptor),
   fileInterceptor.singleFileStore('image').bind(fileInterceptor),
-  // FileInterceptor.singleFileStore('collections_image').bind(fileInterceptor),
-  // fileInterceptor.singleFileStore('case_image').bind(fileInterceptor),
-
   controller.create.bind(controller)
 );
+
 skinsRouter.patch(
   '/:id',
   interceptor.authorization.bind(interceptor),
   interceptor.authenticationSkins.bind(interceptor),
   controller.update.bind(controller)
 );
+
 skinsRouter.delete(
   '/:id',
   interceptor.authorization.bind(interceptor),
