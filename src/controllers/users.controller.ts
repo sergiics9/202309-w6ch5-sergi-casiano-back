@@ -4,6 +4,7 @@ import { UsersMongoRepo } from '../repos/users.mongo.repo.js';
 import { Auth } from '../services/auth.js';
 import { User } from '../entities/user.js';
 import { Controller } from './controller.js';
+import { LoginResponse } from '../types/login.response.js';
 
 const debug = createDebug('SKINS:users:controller');
 
@@ -19,7 +20,7 @@ export class UsersController extends Controller<User> {
         ? await this.repo.getById(req.body.userId)
         : await this.repo.login(req.body);
 
-      const data = {
+      const data: LoginResponse = {
         user: result,
         token: Auth.signJWT({
           id: result.id,

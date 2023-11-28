@@ -13,7 +13,11 @@ const repo = new UsersMongoRepo();
 const controller = new UsersController(repo);
 const interceptor = new AuthInterceptor();
 
-usersRouter.get('/', controller.getAll.bind(controller));
+usersRouter.get(
+  '/',
+  interceptor.authorization.bind(interceptor),
+  controller.getAll.bind(controller)
+);
 
 usersRouter.post('/register', controller.create.bind(controller));
 
@@ -29,4 +33,10 @@ usersRouter.patch(
   '/:id',
   interceptor.authorization.bind(interceptor),
   controller.update.bind(controller)
+);
+
+usersRouter.delete(
+  '/:id',
+  interceptor.authorization.bind(interceptor),
+  controller.delete.bind(controller)
 );
