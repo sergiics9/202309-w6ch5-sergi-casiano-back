@@ -1,17 +1,13 @@
 import { hash, compare } from 'bcrypt';
 import 'dotenv/config';
 import jwt from 'jsonwebtoken';
-import { User } from '../entities/user.js';
 import createDebug from 'debug';
 import { HttpError } from '../types/http.error.js';
+import { TokenPayload } from '../types/token.payload.js';
 
 const debug = createDebug('SKINS:skins:router');
 debug('Imported');
 
-export type TokenPayload = {
-  id: User['id'];
-  email: string;
-} & jwt.JwtPayload;
 export abstract class Auth {
   static secret = process.env.JWT_SECRET;
   static hash(value: string): Promise<string> {

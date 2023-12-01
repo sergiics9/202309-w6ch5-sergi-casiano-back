@@ -1,3 +1,4 @@
+import { ImgData } from '../types/img.data';
 import { Skin } from './skin';
 
 export type LoginUser = {
@@ -10,5 +11,7 @@ export type User = LoginUser & {
   name: string;
   surname: string;
   age: number;
+  avatar: ImgData;
+  role: 'Admin' | 'User';
   skins: Skin[];
 };
