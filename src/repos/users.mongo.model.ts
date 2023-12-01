@@ -18,6 +18,22 @@ const usersSchema = new Schema<User>({
 
   age: Number,
 
+  avatar: {
+    publicId: String,
+    size: Number,
+    height: Number,
+    width: Number,
+    format: String,
+    url: String,
+  },
+
+  role: {
+    type: String,
+    required: true,
+    enum: ['Admin', 'User'],
+    default: 'User',
+  },
+
   skins: [
     {
       type: Schema.Types.ObjectId,

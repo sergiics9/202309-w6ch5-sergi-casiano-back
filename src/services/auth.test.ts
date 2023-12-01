@@ -1,4 +1,5 @@
-import { Auth, TokenPayload } from './auth';
+import { Auth } from './auth';
+import { TokenPayload } from '../types/token.payload.js';
 import { hash, compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
